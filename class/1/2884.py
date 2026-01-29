@@ -5,13 +5,9 @@
 import sys
 input=sys.stdin.readline
 
-def solve(H,M):
-    if M>=45:
-        print(H,M-45)
-        return
-    if H==0:
-        H=24
-    print(H-1,M+15)
-    return
 H,M=map(int,input().split())
-solve(H,M)
+# if M<45:
+#     H=H-1
+# print(H%24,(M-45)%60)
+total=H*60+M-45
+print(total//60%24,total%60)
